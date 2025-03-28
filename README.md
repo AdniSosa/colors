@@ -43,6 +43,6 @@ Como siempre en `App.jsx` pondremos nuestra aplicación
 ```js 
 className={`box ${color}`}
 ```
-Cuidado con lo que comparas... Puede que falte algo en el valor que llega del input con la lista de clases del elemento. Fíjate en el ejemplo del aspeto que tiene el `className`
+Cuidado con lo que comparas... Puede que falte algo en el valor que llega del input con la lista de clases del elemento. Fíjate en el ejemplo del aspecto que tiene el `className`
 
 - Tendremos que trabajar con clases para jugar con esos colores. Tienes unas css de inicio dentro de `App.css`, como por ejemplo `box`. Revísalas y añade más, cambialas, ... Si lo ves necesario. Sino, siempre podrás añadirlas en línea dentro del componente. Tal vez sea más fácil para ciertas cosas.

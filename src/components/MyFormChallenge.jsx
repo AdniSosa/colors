@@ -1,49 +1,34 @@
-//- `MyFormChallenge.jsx`: Aquí crearemos el formulario e importaremos las BoxColor para pasarle `props`.
-//También tendremos un input en el que escribiremos el color para hacer que coincida.
-// El funcionamiento es el siguiente:
-// - Si escribimos un color que está en la lista, el cuadro de ese color tendra el fondo de ese color.
-// - Si el color (palabra que se escribe en el input) no coincide con el color, no cambiara ningun fondo.
-// - Mientras se escribe el color, ese valor del input irá cambiando en el texto dentro de cada cuadro.
-// - Tendremos 2 textos: Uno que diga que no soy el color y cambiará el texto cuando coincida el color.
-//const colors = ['red', 'green', 'pink', 'yellow', 'purple', 'white', 'blue', 'aqua', 'olive'];
-
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useState } from "react";
 import BoxColor from "./BoxColor";
 
 function MyForm() {
-
   const [value, setValue] = useState('');
-  const [inputText, setInputText] = useState('');
   const [color, setColor] = useState('');
-  const inputRef = useRef(null)
 
-  const findColor = (inputText) => {
-    const colors = ['red', 'green', 'pink', 'yellow', 'purple', 'white', 'blue', 'aqua', 'olive'];
-    const colorFound = colors.find(color => inputText === color);
-
-    if (!colorFound) {
-      setColor(inputText);
-      return colorFound
-    }
-    setColor(colorFound);
-    setValue(`Yes, I'm ${colorFound} color`)
+  const colors = ['red', 'green', 'pink', 'yellow', 'purple', 'white', 'blue', 'aqua', 'olive'];
+  
+  const findColor = (inputValue) => {
+    const colorFound = colors.find(color => color === inputValue)
+    setColor(inputValue);
   }
 
   useEffect(() => {
-    findColor(inputText)
-  }, [inputText])
-
-
+    findColor(value)
+  }, [value])
+  
   return (
     <>
-      <input
-        type="text"
-        value={inputText}
-        onChange={() => setInputText(inputRef.current.value)}
-        placeholder='Choose a color'
-        ref={inputRef}
+      <input 
+         type="text"
+         value={value}
+         onChange={(e) => setValue(e.target.value)}
+         placeholder='Choose a color'
       />
-      <BoxColor color={color} value={value} />
+      <div className="container">
+      {colors.map(divColor =>(
+        <BoxColor key={divColor} divColor={divColor} value={value} color={color}/>
+      ))}
+      </div>
     </>
   );
 }

@@ -33,44 +33,6 @@
   font-weight: bold;
 }
 
-
-.blue {
-  color:blue;
-
-}
-
-.red {
-  color:red;
-}
-
-.green {
-  color:green;
-}
-
-.pink {
-  color:pink;
-}
-
-.yellow {
-  color:yellow;
-}
-
-.purple {
-  color:purple;
-}
-
-.white {
-  color:white;
-}
-
-.aqua {
-  color:aqua;
-}
-
-.olive {
-  color:olive;
-}
-
 /* Estilos para el input */
 input {
   width: 50%;

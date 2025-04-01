@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-function BoxColor({ color, value, divColor }) {
+function BoxColor({ color, divColor }) {
   const divRef = useRef()
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function BoxColor({ color, value, divColor }) {
       divRef.current.style.backgroundColor = 'transparent'
       divRef.current.style.color = divColor
     }
-  }, [value, color])
+  }, [color])
 
   return (
     <div

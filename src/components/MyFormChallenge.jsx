@@ -8,7 +8,6 @@ function MyForm() {
   const colors = ['red', 'green', 'pink', 'yellow', 'purple', 'white', 'blue', 'aqua', 'olive'];
   
   const findColor = (inputValue) => {
-    const colorFound = colors.find(color => color === inputValue)
     setColor(inputValue);
   }
 
